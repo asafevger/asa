@@ -1,0 +1,17 @@
+pip3 install mysql-connector-python
+
+ # Install mysql-connector-python
+ RUN pip3 install mysql-connector-python
+
+ $ docker build --tag python-docker-dev .
+
+ $ docker run \
+   --rm -d \
+   --network mysqlnet \
+   --name rest-server \
+   -p 8000:5000 \
+   python-docker-dev
+
+
+$ curl http://localhost:8000/initdb
+$ curl http://localhost:8000/widgets
